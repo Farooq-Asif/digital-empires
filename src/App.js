@@ -1,23 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter } from 'react-router-dom';
+import Routers from './Routers/Routers';
+import { createContext, useState } from 'react';
+export const GlobalInfo =createContext()
 function App() {
+  const[themeValue,setThemeValue]=useState('')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <GlobalInfo.Provider value={{ themeValue, setThemeValue }}>
+          <Routers />
+
+        </GlobalInfo.Provider>
+      </BrowserRouter>
     </div>
   );
 }
