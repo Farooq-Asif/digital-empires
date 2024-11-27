@@ -38,19 +38,22 @@ const ThemeToggle = () => {
 
             {/* Dropdown Menu */}
             {menuOpen && (
-                <div className="absolute  left-0 top-5 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 w-36 rounded-lg shadow-lg py-2">
+                   <div
+                   className="absolute top-7 right-0 md:left-0 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 
+                   w-36 rounded-lg shadow-lg py-2 z-50"
+               >
                     <button
                         className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 w-full"
                         onClick={() => setTheme("light")}
                     >
-                        <LuSun color="white" cursor='pointer' size={16} />
+                        <LuSun color="black" cursor='pointer' size={16} />
                         Light
                     </button>
                     <button
                         className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 w-full"
                         onClick={() => setTheme("dark")}
                     >
-                        <FaRegMoon color="white" size={16} cursor='pointer' />
+                        <FaRegMoon color="black" size={16} cursor='pointer' />
                         Dark
                     </button>
                 </div>

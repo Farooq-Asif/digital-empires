@@ -15,7 +15,7 @@ const HomeMainSection = ({ onScroll }) => {
     >
       
         <motion.h1
-          className={`text-[92px]  text-center font-bold `}
+          className={`lg:text-[92px] xs:text-[40px] sm:text-[50px] md:text-[70px]   text-center font-bold `}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -52,7 +52,7 @@ const HomeMainSection = ({ onScroll }) => {
         </div>
         <ProductComponent />
       <div className="flex flex-col   items-center px-4">
-        <div className="flex flex-col items-center w-full max-w-4xl space-y-20">
+        <div className="flex flex-col items-center w-full max-w-4xl  xs:space-y-10 sm:space-y-10 lg:space-y-20">
           <h2 className="font-bold text-center text-lg sm:text-xl md:text-2xl lg:text-5xl leading-snug">
             Demand.io is a tech accelerator built on top of an AI commerce data platform.
           </h2>

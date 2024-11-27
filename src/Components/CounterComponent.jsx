@@ -2,7 +2,7 @@ import React,{useContext} from "react";
 import CountUp from "react-countup";
 import { GlobalInfo } from "../App";
 
-const CounterComponent = () => {
+const CounterComponent = ({title}) => {
   const { themeValue } = useContext(GlobalInfo)
   const savedTheme = localStorage.getItem("theme");
   return (
@@ -10,7 +10,7 @@ const CounterComponent = () => {
       <div className="container mx-auto px-4">
         <div className=" xs:mx-[20px]  sm:mb-12 xs:mb-12 md:mb-12 lg:mb-12 lg:mx-[140px]">
           <h2 className="text-4xl text-[65px] xs:text-[35px] text-nowrap font-bold leading-tight ">
-            <span className="block animate-slideInUp">Operating at scale</span>
+            <span className="block animate-slideInUp">{title}</span>
           </h2>
           <p className=" mt-4">
             Our products reach millions of consumers, helping them make

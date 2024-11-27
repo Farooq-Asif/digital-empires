@@ -1,12 +1,31 @@
-import React from 'react'
-import GetInTouchComponent from '../../Components/GetInTouchComponent'
-import MainLayout from '../../Layout/MainLayout'
+import React from "react";
+import GetInTouchComponent from "../../Components/GetInTouchComponent";
+import MainLayout from "../../Layout/MainLayout";
+import CounterComponent from "../../Components/CounterComponent";
+import img from "../../Assets/Images/Blue Dark Professional Geometric Business Project Presentation .png";
+import PressRecentNewComponent from "../../Components/PressRecentNewComponent";
 const Press = () => {
-    return (
-        <>
-            <GetInTouchComponent title='Demand.iopress page.' myclass='bg-black' paragraph='Your one-stop shop for all the latest press releases from Demand.io, press kit assets and more.' />
-        </>
-    )
-}
+  return (
+    <>
+      <GetInTouchComponent
+        title="Demand.iopress page."
+        myclass="bg-black text-white relative"
+        paragraph="Your one-stop shop for all the latest press releases from Demand.io, press kit assets and more."
+      />
+      {/* <div className="absolute left-[250px] bottom-[-150px] flex justify-center items-center  ">
+        <img
+          src={img}
+          width={1400}
+          className=""
+          style={{ mixBlendMode: "multiply" }}
+        />
+      </div> */}
+      <div className="my-[100px]">
+      <PressRecentNewComponent/>
+      </div>
+      <CounterComponent title="About Digital Empires" />
+    </>
+  );
+};
 
-export default MainLayout(Press)
+export default MainLayout(Press);
