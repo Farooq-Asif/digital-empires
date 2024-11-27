@@ -1,5 +1,5 @@
 import React from 'react'
-const TextField = ({ label, type, touched, error, className, ...props }, ref) => {
+const TextField = ({ label, type, touched, errors, className, ...props }, ref) => {
     return (
         <>
             <label htmlFor="input">{label}</label>
@@ -11,7 +11,7 @@ const TextField = ({ label, type, touched, error, className, ...props }, ref) =>
                 autoComplete='off'
 
             />
-            {touched && error ? <p className='text-danger'>{error}</p> : null}
+            {errors && <p className='text-danger text-red-600'>{errors}</p> }
 
 
         </>
