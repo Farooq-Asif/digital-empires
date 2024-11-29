@@ -73,7 +73,7 @@ const ContactForm = () => {
     try {
       contactFormSchema.parse(formValues); // Validate form values
       const res = await axios.post(
-        "https://db-production-f32b.up.railway.app/digitalempires/contactus",
+        "https://digital-empires-db-production.up.railway.app/digitalempires/contactus",
         formValues
       );
       console.log("🚀 ~ handleSubmit ~ res:", res);

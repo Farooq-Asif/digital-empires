@@ -8,7 +8,7 @@ const Press = () => {
   return (
     <>
       <GetInTouchComponent
-        title="Demand.iopress page."
+        title="Digital Empires.press page."
         myclass="bg-black text-white relative"
         paragraph="Your one-stop shop for all the latest press releases from Demand.io, press kit assets and more."
       />
