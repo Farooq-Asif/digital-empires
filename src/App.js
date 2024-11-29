@@ -5,6 +5,7 @@ import Routers from './Routers/Routers';
 import { createContext, useState } from 'react';
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import "react-loading-skeleton/dist/skeleton.css"; 
 
 export const GlobalInfo =createContext()
 function App() {
