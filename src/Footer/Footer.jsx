@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="flex flex-col items-start space-y-4">
             <div className="flex items-center space-x-2">
               <img src={icon} alt="Logo" className="w-8 h-8 bg-white rounded" /> {/* Replace with actual logo path */}
-              <span className="text-xl font-semibold">demand.io</span>
+              <span className="text-xl font-semibold">Digital Empires</span>
             </div>
             <div className="flex space-x-4">
               <a href="#" aria-label="Peace" className="hover:text-gray-400">✌</a>
