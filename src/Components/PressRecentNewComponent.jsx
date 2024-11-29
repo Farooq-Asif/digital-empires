@@ -51,7 +51,7 @@ const PressRecentNewComponent = () => {
                   <div>
                     <p className="text-sm">{news.publisher}</p>
                     <Link to={news.websiteLink}>
-                      <p className="text-lg font-semibold">{news.newsText}</p>
+                      <p className="text-lg font-semibold hover:underline">{news.newsText}</p>
                     </Link>
                   </div>
                   <p className="text-sm">{formattedDate}</p>
