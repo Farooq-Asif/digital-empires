@@ -4,7 +4,7 @@ const HomeOurProjectSection = () => {
   return (
     <section className="bg-black text-white py-16 px-6 md:px-16">
       <div className="max-w-6xl mx-auto sm:space-y-10  md:space-y-20 lg:space-y-20 ">
-        <h2 className="sm:text-[50px] lg:text-[65px] xs:text-[35px] text-nowrap font-bold leading-tight   ">
+        <h2 className="sm:text-[50px] lg:text-[65px] xs:text-[28px] text-nowrap font-bold leading-tight   ">
           {" "}
           Our properties & projects.{" "}
         </h2>

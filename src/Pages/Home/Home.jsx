@@ -23,8 +23,8 @@ const Home = () => {
       <HomeOurProjectSection />
       <CounterComponent title='Operating at scale' />
 
-      <div className="container mx-auto my-10 px-6 lg:px-[10%] py-10 space-y-24">
-        <h2 className="sm:text-[50px] lg:text-[65px] xs:text-[35px] text-nowrap font-bold leading-tight   ">
+      <div className="container mx-auto my-10 px-6 lg:px-[10%] py-10 xs:space-y-7 lg:space-y-24">
+        <h2 className="sm:text-[50px] lg:text-[65px] xs:text-[28px] text-nowrap font-bold leading-tight   ">
           {" "}
           Meet the leadership team.{" "}
         </h2>
