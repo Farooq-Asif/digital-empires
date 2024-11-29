@@ -6,9 +6,13 @@ import { contactFormSchema } from "../Schema/Schema";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { contactUs } from "../store/recentnews/actions/actionsCreators";
+const Url=process.env.REACT_APP_MAIN_URL
 const ContactForm = () => {
   const savedTheme = localStorage.getItem("theme");
   const [toastMessage, setToastMessage] = useState("");
+  const{isLoading}=useSelector((state)=>state.news)
   const Navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const aboutOptions = [
@@ -51,6 +55,8 @@ const ContactForm = () => {
 
   const [formValues, setFormValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
+const Dispatch=useDispatch()
+const [showGreenTick, setShowGreenTick] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,35 +74,35 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start the loading state
-
+  
     try {
-      contactFormSchema.parse(formValues); // Validate form values
-      const res = await axios.post(
-        "https://digital-empires-db-production.up.railway.app/digitalempires/contactus",
-        formValues
-      );
-      console.log("🚀 ~ handleSubmit ~ res:", res);
-
-      if (res.status === 200) {
-        toast.success(res.data.message);
-        Navigate("/");
-      }
+      // Validate form values
+      contactFormSchema.parse(formValues);
+  
+      // Dispatch the contact form action
+      Dispatch(contactUs(formValues));
+  
+      // Reset the green tick state and display it after 2 seconds
+      setShowGreenTick(false);
+      setTimeout(() => {
+        setShowGreenTick(true);
+  
+        // Hide the green tick after 10 seconds
+        setTimeout(() => {
+          setShowGreenTick(false);
+        }, 10000);
+      }, 2000);
     } catch (err) {
-      toast.success(err?.res?.data.message);
-      if (err instanceof z.ZodError) {
-        const fieldErrors = err.errors.reduce((acc, error) => {
-          acc[error.path[0]] = error.message;
-          return acc;
-        }, {});
-        setErrors(fieldErrors);
-      } else {
-        setToastMessage("Something went wrong. Please try again.");
-      }
-    } finally {
-      setLoading(false); // Always stop loading after handling
+      // Handle validation errors
+      const validationErrors = {};
+      err.errors.forEach((error) => {
+        validationErrors[error.path[0]] = error.message;
+      });
+      setErrors(validationErrors);
+      toast.error("All Fields Are Required");
     }
   };
+  
 
   return (
     <div className="max-w-3xl xs:mx-5 sm:mx-5 md:mx-auto lg:mx-auto my-20">
@@ -187,13 +193,28 @@ const ContactForm = () => {
             type="submit"
             className={`px-5 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-transparent ${savedTheme==='dark' ? 'bg-[#F2F2F1]  text-black border border-black':'bg-black text-white border border-white'}`}
           >
-            {loading ? (
-              <div className="flex justify-center items-center space-x-2">
-                <div className="w-8 h-8 border-4 border-t-white border-b-transparent border-l-transparent border-r-transparent rounded-full animate-spin"></div>
-              </div>
-            ) : (
-              "Submit"
-            )}
+            {isLoading ? (
+        // Spinner
+        <div className="w-5 h-5 border-4 border-t-white border-b-transparent border-l-transparent border-r-transparent rounded-full animate-spin"></div>
+      ) : showGreenTick ? (
+        // Green Tick
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-5 h-5 text-green-500 transition-all duration-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+      ) : (
+        <span>Submit</span>
+      )}
           </button>
         </div>
       </form>
