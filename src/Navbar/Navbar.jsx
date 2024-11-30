@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import icon from "../Assets/Images/star-badge.png";
+import icon from "../Assets/Images/favicon.png";
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "../Components/ThemeToggle";
 
@@ -104,9 +104,9 @@ const Navbar = () => {
       </div>
 
       <nav className="flex items-center justify-between p-4 header text-white fixed top-0 right-0 left-0 z-[1030] bg-[rgba(0,0,0,0.15)]">
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center ">
           <img src={icon} alt="Logo" className="w-8 h-8 " />
-          <span className="text-xl font-semibold">Digital Empires</span>
+          <span className="text-xl font-semibold">igital Empires</span>
         </div>
         <div className="flex items-center space-x-6">
           <ThemeToggle />
