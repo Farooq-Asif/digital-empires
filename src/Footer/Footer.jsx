@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-8 md:space-y-0">
           <div className="flex flex-col items-start space-y-4">
             <div className="flex items-center space-x-2">
-              <img src={icon} alt="Logo" className="w-8 h-8 bg-white rounded" /> {/* Replace with actual logo path */}
+              <img src={icon} alt="Logo" className="w-8 h-8 bg-white rounded" /> 
               <span className="text-xl font-semibold">Digital Empires</span>
             </div>
             <div className="flex space-x-4">
