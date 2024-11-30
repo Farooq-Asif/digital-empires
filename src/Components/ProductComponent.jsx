@@ -21,7 +21,7 @@ const ProductComponent = () => {
             <div className="flex flex-row space-x-8">
                 {/* Product.AI */}
                 <a
-                    href="sanablogs.com"
+                    href="https://sanablogs.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#1a1a2e] rounded-[10px] p-20 flex flex-col items-center hover:shadow-lg transition"
@@ -31,7 +31,7 @@ const ProductComponent = () => {
                         alt="Product.AI"
                         className="w-56 mb-4"
                     />
-                    <p className="text-center text-lg">Digital Empires</p>
+                    <p className="text-center text-lg">Sana Blogs</p>
                 </a>
 
                 {/* Simplycodes */}
