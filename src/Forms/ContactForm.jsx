@@ -1,20 +1,13 @@
 import React, { useState } from "react";
-import { z } from "zod";
 import TextField from "../Components/TextField";
 import SelectTag from "../Components/SelectTag";
 import { contactFormSchema } from "../Schema/Schema";
-import axios from "axios";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { contactUs } from "../store/recentnews/actions/actionsCreators";
-const Url=process.env.REACT_APP_MAIN_URL
 const ContactForm = () => {
   const savedTheme = localStorage.getItem("theme");
-  const [toastMessage, setToastMessage] = useState("");
   const{isLoading}=useSelector((state)=>state.news)
-  const Navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
   const aboutOptions = [
     { value: "i'm a merchant.", label: "i'm a merchant." },
     { value: "i'm a creator.", label: "i'm a creator." },
@@ -91,7 +84,10 @@ const [showGreenTick, setShowGreenTick] = useState(false);
         setTimeout(() => {
           setShowGreenTick(false);
         }, 10000);
+
       }, 2000);
+      setFormValues(initialValues)
+
     } catch (err) {
       // Handle validation errors
       const validationErrors = {};
