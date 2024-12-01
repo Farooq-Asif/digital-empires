@@ -44,7 +44,7 @@ const TopBar = () => {
           onClick={toggleDropdown}
           className="text-white p-2 rounded-full  focus:outline-none"
         >
-          <FiChevronDown className="ml-2" size={24} />
+          <FiChevronDown cursor='pointer' className="ml-2" size={24} />
         </button>
         {isOpen && (
           <div className="absolute right-0 top-10 mt-2 w-[100px] bg-white shadow-lg rounded-md ">
