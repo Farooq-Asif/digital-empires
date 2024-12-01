@@ -384,7 +384,7 @@ const [showGreenTick, setShowGreenTick] = useState(false);
           >
             {isLoading ? (
         // Spinner
-        <div className="w-5 h-5 border-4 border-t-white border-b-transparent border-l-transparent border-r-transparent rounded-full animate-spin"></div>
+        <div className="w-5 h-5 border-4 border-t-white border-b-transparent border-l-transparent border-r-transparent rounded-full animate-spin"/>
       ) : showGreenTick ? (
         // Green Tick
         <svg

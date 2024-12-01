@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import icon from "../Assets/Images/favicon.png";
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "../Components/ThemeToggle";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Sidebar open/close state
+  const { token } = useSelector((state) => state.user);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const theme = localStorage.getItem("theme");
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -144,9 +146,12 @@ const Navbar = () => {
             <NavLink to="#products" className="hover:text-gray-300">
               Products
             </NavLink>
-            <button className="px-4 py-1.5 bg-white text-blue-900 rounded-full hover:bg-gray-200 transition-colors">
-              Join us
-            </button>
+
+            <NavLink to={token ? "/dashboard" : "/login"}>
+              <button className="px-4 py-1.5 bg-white text-blue-900 rounded-full hover:bg-gray-200 transition-colors">
+                {token ? "Dashboard" : "Login"}
+              </button>
+            </NavLink>
           </div>
         </div>
       </nav>

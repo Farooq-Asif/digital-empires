@@ -1,6 +1,7 @@
 import React from 'react';
 import Copyright from './Copyright';
 import icon from "../Assets/Images/favicon.png";
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-10">
@@ -12,7 +13,6 @@ const Footer = () => {
               <span className="text-xl font-semibold">igital Empires</span>
             </div>
             <div className="flex space-x-4">
-              <a href="#" aria-label="Peace" className="hover:text-gray-400">✌</a>
               <a href="#" aria-label="LinkedIn" className="hover:text-gray-400">LinkedIn</a>
               <a href="#" aria-label="Twitter" className="hover:text-gray-400">Twitter</a>
               <a href="#" aria-label="GitHub" className="hover:text-gray-400">GitHub</a>
@@ -34,14 +34,15 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li><a href="#simplycodes" className="hover:text-gray-400">Best Cart Offer</a></li>
                 <li><a href="#productai" className="hover:text-gray-400">Sana Blogs</a></li>
-                <li><a href="#dealspotr" className="hover:text-gray-400">Many Best Promo</a></li>
+                <li><a href="#dealspotr" className="hover:text-gray-400">Many Best Promo
+                  </a></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold">Connect</h4>
               <ul className="space-y-2">
                 <li><a href="#join" className="hover:text-gray-400">Join us</a></li>
-                <li><a href="#contact" className="hover:text-gray-400">Contact us</a></li>
+                <li><Link to="/contactus" className="hover:text-gray-400">Contact us</Link></li>
               </ul>
             </div>
           </div>

@@ -72,7 +72,7 @@ const HomeMainSection = ({ onScroll }) => {
       <div className="flex flex-col   items-center px-4">
         <div className="flex flex-col items-center w-full max-w-4xl  xs:space-y-10 sm:space-y-10 lg:space-y-20">
           <h2 className="font-bold text-center text-lg sm:text-xl md:text-2xl lg:text-5xl leading-snug">
-            Demand.io is a tech accelerator built on top of an AI commerce data
+            Digital Empires is a tech accelerator built on top of an AI commerce data
             platform.
           </h2>
           <h2 className="font-bold text-center text-lg sm:text-xl md:text-2xl lg:text-4xl leading-snug ">
@@ -92,16 +92,16 @@ const HomeMainSection = ({ onScroll }) => {
         </div>
       </div>
 
-      <div class="arrow-container text-center mt-[100px]">
+      <div className="arrow-container text-center mt-[100px]">
         <button
           id="scroll-arrow"
-          class="arrow-button animate-bounce "
+          className="arrow-button animate-bounce "
           onClick={onScroll}
         >
           <img
             src="https://demand.io/img/icons/arrow_stem_scroll_indicator.svg"
             alt="Scroll Down Arrow"
-            class="arrow-image"
+            className="arrow-image"
           />
         </button>
       </div>

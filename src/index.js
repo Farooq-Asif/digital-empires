@@ -5,13 +5,12 @@ import { combineReducers, createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import {thunk}  from "redux-thunk";
 import newsReducer from './store/recentnews/reducers/PersonsReducer'
+import userReducer from "./store/user/reducers/userReducer";
 import './index.css'
 const rootReducer = combineReducers({
   news: newsReducer,
-  // venue:VenueReducer,
-  // person:PersonsReducer,
-  // team:TeamReducer,
-  // tournament:TournamentReducer
+  user:userReducer,
+ 
  
 });
 
@@ -26,7 +25,7 @@ if (isClient) {
 
   const storage = require("redux-persist/lib/storage").default;
   const persistConfig = {
-    key: "grow-share",
+    key: "digital-empires",
     storage,
   };
 

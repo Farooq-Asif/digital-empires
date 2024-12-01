@@ -47,7 +47,7 @@ const LeaderShipComponent = ({ text1, text2, text3, Subtitle, title, reverseLayo
                         href="/careers/spotlight/michael-quoc"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-indigo-500 font-medium inline-flex items-center space-x-1 hover:underline"
+                        className=" font-medium inline-flex items-center space-x-1 hover:underline hover:text-[rgb(253,0,0)]"
                     >
                         <span>Read more about Mike</span>
                         <svg

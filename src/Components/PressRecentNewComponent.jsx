@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRecentNews } from "../store/recentnews/actions/actionsCreators";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css"; // Import skeleton CSS
+
 
 const PressRecentNewComponent = () => {
   const savedTheme = localStorage.getItem("theme");

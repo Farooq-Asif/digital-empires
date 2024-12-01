@@ -1,18 +1,17 @@
 import React, { useState, useContext, useEffect } from "react";
-import { FaRegMoon, FaSun } from "react-icons/fa"; // Import sun icon for light mode
+import { FaRegMoon } from "react-icons/fa"; 
 import { GlobalInfo } from "../App";
 import { LuSun } from "react-icons/lu";
 
 const ThemeToggle = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const { setThemeValue, themeValue } = useContext(GlobalInfo);
     const savedTheme = localStorage.getItem("theme");
 
     const setTheme = (theme) => {
-        setThemeValue(theme);
         localStorage.setItem("theme", theme);
         setMenuOpen(false); 
     };
+   
 
     useEffect(() => {
           document.body.classList.add("transition-colors", "duration-1000");
@@ -31,9 +30,9 @@ const ThemeToggle = () => {
         <div className="relative flex items-center gap-4">
             
             {savedTheme === "dark" ? (
-                    <FaRegMoon color="white" cursor='pointer' size={20} onClick={() => setMenuOpen((prev) => !prev)} />
+                    <FaRegMoon size={20} color="white" cursor='pointer'  onClick={() => setMenuOpen((prev) => !prev)} />
                 ) : (
-                    <LuSun size={20} cursor='pointer' onClick={() => setMenuOpen((prev) => !prev)} />
+                    <LuSun size={20} color="white" cursor='pointer' onClick={() => setMenuOpen((prev) => !prev)} />
                 )}
 
             {/* Dropdown Menu */}
@@ -46,14 +45,14 @@ const ThemeToggle = () => {
                         className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 w-full"
                         onClick={() => setTheme("light")}
                     >
-                        <LuSun color="black" cursor='pointer' size={16} />
+                        <LuSun  color="white" cursor='pointer' size={16} />
                         Light
                     </button>
                     <button
                         className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 w-full"
                         onClick={() => setTheme("dark")}
                     >
-                        <FaRegMoon color="black" size={16} cursor='pointer' />
+                        <FaRegMoon color="white" cursor='pointer' size={16} />
                         Dark
                     </button>
                 </div>

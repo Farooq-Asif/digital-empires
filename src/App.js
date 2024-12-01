@@ -9,12 +9,13 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 export const GlobalInfo =createContext()
 function App() {
-  const[themeValue,setThemeValue]=useState('')
+ 
+  const[ isCollapsed, setIsCollapsed  ]=useState(false)
   return (
     <div className="App">
         <ToastContainer />
       <BrowserRouter>
-        <GlobalInfo.Provider value={{ themeValue, setThemeValue }}>
+        <GlobalInfo.Provider value={{ isCollapsed, setIsCollapsed}}>
           <Routers />
 
         </GlobalInfo.Provider>
