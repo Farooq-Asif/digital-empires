@@ -1,15 +1,15 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { motion } from "framer-motion";
 import ProductComponent from "./ProductComponent";
 const HomeMainSection = ({ onScroll }) => {
   const nextSectionRef = useRef(null);
-  const savedTheme = localStorage.getItem("theme")==='light';
+  const savedTheme = localStorage.getItem("theme") || 'light'  ;
   return (
     <div
-      className={`${
-        savedTheme &&
-         "bg-gradient-to-b from-[#060660] via-[#040440] to-[#000000]"
-      }  relative pt-[145px] text-white `}
+    className={`${
+      savedTheme==='light'  &&
+      "bg-gradient-to-b from-[#060660] via-[#040440] to-[#000000]"
+    }  relative pt-[145px] text-white `}
     >
       <motion.h1
         className={`lg:text-[92px] xs:text-[30px] sm:text-[50px] md:text-[70px]   text-center font-bold `}

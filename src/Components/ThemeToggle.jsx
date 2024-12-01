@@ -6,7 +6,7 @@ import { PiUserCheckBold } from "react-icons/pi";
 
 const ThemeToggle = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const savedTheme = localStorage.getItem("theme");
+    const savedTheme = localStorage.getItem("theme") || 'light';
     const{valueTheme,setThemeValue}=useContext(GlobalInfo)
     const setTheme = (theme) => {
         setThemeValue(theme)

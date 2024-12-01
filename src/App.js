@@ -11,7 +11,7 @@ export const GlobalInfo =createContext()
 function App() {
  
   const[ isCollapsed, setIsCollapsed  ]=useState(false)
-  const[valueTheme,setThemeValue]=useState(null)
+  const[valueTheme,setThemeValue]=useState('light')
   return (
     <div className="App">
         <ToastContainer />
