@@ -7,7 +7,6 @@ import {
   getRecentNews,
 } from "../store/recentnews/actions/actionsCreators";
 import Skeleton from "react-loading-skeleton";
-import { BsEye } from "react-icons/bs";
 import { CiEdit } from "react-icons/ci";
 import { AiOutlineDelete } from "react-icons/ai";
 import DeleteModal from "../Models/DeleteMode";
@@ -17,10 +16,8 @@ const RecentNewsTable = () => {
   const Dispatch = useDispatch();
   const savedTheme = localStorage.getItem("theme");
   const [addNewsModel, setNewsModel] = useState(false);
-  const Navigate = useNavigate();
   const { recentNewsData, isLoading } = useSelector((state) => state.news);
   const { token } = useSelector((state) => state.user);
-  const { SetTournamentEdit, SetTournamentId } = useContext(GlobalInfo);
   const [showModel, setShowmodel] = useState();
   const [state, setState] = useState(false);
   const [newsId, setNewsId] = useState(null);
@@ -51,7 +48,7 @@ const RecentNewsTable = () => {
 
   return (
     <>
-      <div className="section-main mx-auto mt-10 px-3 py-4  max-w-5xl ">
+      <div className="section-main mx-auto mt-10 px-3 py-4  max-w-[90%] ">
         <div className="mx-auto text-end">
           <button
             type="submit"
@@ -66,7 +63,7 @@ const RecentNewsTable = () => {
           </button>
         </div>
 
-        <div className="section-main mx-auto mt-10 px-3 pb-3 rounded-lg shadow-lg max-w-5xl bg-white">
+        <div className={`section-main mx-auto mt-10 px-3 pb-3 rounded-lg shadow-lg max-w-[100%] ${savedTheme==='dark' && 'text-black'} bg-white`}>
             <h1 className='text-xl py-3 font-bold'>All News Table</h1>
           {isLoading ? (
             [...Array(3)].map((_, index) => (
@@ -79,14 +76,15 @@ const RecentNewsTable = () => {
               </div>
             ))
           ) : recentNewsData?.recentNewsData?.length > 0 ? (
-            <table className="min-w-full table-auto border-collapse border border-gray-300">
+            <table className="min-w-full table-auto border-collapse border ">
               <thead>
-                <tr className="bg-gray-100">
+                <tr >
                   <th className="px-4 py-2 border-b">Title</th>
-                  <th className="px-4 py-2 border-b">Publisher Name</th>
                   <th className="px-4 py-2 border-b text-nowrap">
                     Website Link
                   </th>
+                  <th className="px-4 py-2 border-b">Publisher Name</th>
+
                   <th className="px-4 py-2 border-b text-nowrap">
                     Publish Date
                   </th>
@@ -103,21 +101,22 @@ const RecentNewsTable = () => {
                   });
 
                   return (
-                    <tr key={index} className="odd:bg-gray-50 even:bg-gray-200">
+                    <tr key={index} >
                       <td className="px-4 py-2 border-b">
                         <p className="text-lg font-semibold ">
                           {news.newsText}
                         </p>
                       </td>
-                      <td className="px-4 py-2 border-b text-sm">
-                        {news.publisher}
-                      </td>
+                    
                       <td className="px-4 py-2 border-b">
                         <Link to={news.websiteLink}>
-                          <p className="text-lg font-semibold hover:underline">
-                            link
+                          <p className="text-lg font-semibold  hover:underline">
+                         { news.websiteLink}
                           </p>
                         </Link>
+                      </td>
+                      <td className="px-4 py-2 border-b text-sm">
+                        {news.publisher}
                       </td>
 
                       <td className="px-4 py-2 border-b text-sm">

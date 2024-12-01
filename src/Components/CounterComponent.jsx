@@ -4,9 +4,9 @@ import { GlobalInfo } from "../App";
 
 const CounterComponent = ({title}) => {
   const { themeValue } = useContext(GlobalInfo)
-  const savedTheme = localStorage.getItem("theme");
+  const savedTheme = localStorage.getItem("theme") || 'light';
   return (
-    <section className={`py-[200px] ${savedTheme === 'dark' ? 'bg-black text-white' :'bg-[#F2F2F1] '}`} id="counter">
+    <section className={`py-[200px] ${!savedTheme === 'dark' && 'bg-[#F2F2F1]'}`} id="counter">
       <div className="container mx-auto px-4">
         <div className=" xs:mx-[20px]  sm:mb-12 xs:mb-12 md:mb-12 lg:mb-12 lg:mx-[140px]">
           <h2 className="text-4xl text-[65px] xs:text-[28px] text-nowrap font-bold leading-tight ">

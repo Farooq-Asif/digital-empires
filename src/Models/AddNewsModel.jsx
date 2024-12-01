@@ -33,7 +33,7 @@ const AddNewsModal = ({ showModal, onClose, setState }) => {
     <>
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-lg w-3/4 sm:w-1/2 md:w-1/3">
+          <div className="bg-white p-6  text-black rounded-lg w-3/4 sm:w-1/2 md:w-1/3">
             <h2 className="text-xl font-semibold mb-4">Add News</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

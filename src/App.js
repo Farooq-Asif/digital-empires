@@ -11,11 +11,12 @@ export const GlobalInfo =createContext()
 function App() {
  
   const[ isCollapsed, setIsCollapsed  ]=useState(false)
+  const[valueTheme,setThemeValue]=useState(null)
   return (
     <div className="App">
         <ToastContainer />
       <BrowserRouter>
-        <GlobalInfo.Provider value={{ isCollapsed, setIsCollapsed}}>
+        <GlobalInfo.Provider value={{ isCollapsed, setIsCollapsed,valueTheme,setThemeValue}}>
           <Routers />
 
         </GlobalInfo.Provider>

@@ -1,44 +1,16 @@
-import React, { useContext, useEffect } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { Sidebar, Menu, SubMenu } from "react-pro-sidebar";
-import { IoIosLogOut } from "react-icons/io";
+import { MdDashboard } from "react-icons/md";
+import { IoNewspaperOutline } from "react-icons/io5";
 import logo from '../Assets/Images/favicon.png'
 import { GlobalInfo } from "../App";
-import { useDispatch } from "react-redux";
 const DashboardSidebar = () => {
-  const { isCollapsed, setIsCollapsed } = useContext(GlobalInfo);
-  const location = useLocation();
-  const Dispatch = useDispatch();
-  const Navigate = useNavigate();
-  const path = [
-    "/dashboard",
-    "/listofcourses",
-    "/addnewcourses",
-    "/schedules",
-    "/profile",
-  ];
+  const { isCollapsed } = useContext(GlobalInfo);
  
-  const handleResize = () => {
-    if (window.innerWidth <= 1053) {
-      setIsCollapsed(true);
-    } else {
-      setIsCollapsed(false);
-    }
-  };
+ 
 
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
-
-  const handleSignOutbtn = () => {
-    Navigate("/login");
-  };
+  
   return (
     <>
       <Sidebar
@@ -48,7 +20,7 @@ const DashboardSidebar = () => {
          <div className="flex  items-center p-4">
           <img src={logo} alt="Logo" className="w-8 h-8" />
           {!isCollapsed && 
-          <span className="text-xl font-semibold z-0">igital Empires</span>}
+          <span className="text-xl font-semibold text-black z-0">igital Empires</span>}
         </div>
         <Menu
           menuItemStyles={{
@@ -62,8 +34,8 @@ const DashboardSidebar = () => {
             },
           }}
         >
-          <SubMenu label='Dashboard' component={<NavLink to='/dashboard'/>} ></SubMenu>
-          <SubMenu label='Recent News' component={<NavLink to='/recentnews'/>} ></SubMenu>
+          <SubMenu label={isCollapsed ? <MdDashboard size={25}/>:'Dashboard'} component={<NavLink to='/dashboard'/>} ></SubMenu>
+          <SubMenu label={isCollapsed ?<IoNewspaperOutline size={25}/>:'Recent News'} component={<NavLink to='/recentnews'/>} ></SubMenu>
         </Menu>
 
         {/* {!path.includes(location.pathname) && (

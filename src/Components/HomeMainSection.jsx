@@ -1,20 +1,14 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { TeamInfo } from "../Data/TeamInfo.js";
 import ProductComponent from "./ProductComponent";
-import { GlobalInfo } from "../App.js";
 const HomeMainSection = ({ onScroll }) => {
-  const letters = "The Shopping knowledge network".split("");
-  const { themeValue } = useContext(GlobalInfo);
   const nextSectionRef = useRef(null);
-  const savedTheme = localStorage.getItem("theme");
-
+  const savedTheme = localStorage.getItem("theme")==='light';
   return (
     <div
       className={`${
-        savedTheme === "dark"
-          ? "bg-black text-white"
-          : "bg-gradient-to-b from-[#060660] via-[#040440] to-[#000000]"
+        savedTheme &&
+         "bg-gradient-to-b from-[#060660] via-[#040440] to-[#000000]"
       }  relative pt-[145px] text-white `}
     >
       <motion.h1

@@ -3,18 +3,16 @@ import icon from "../Assets/Images/favicon.png";
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "../Components/ThemeToggle";
 import { useSelector } from "react-redux";
+import { MdSpaceDashboard } from "react-icons/md";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { token } = useSelector((state) => state.user);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const theme = localStorage.getItem("theme");
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+ 
 
   const toggleSidebar = () => {
-    console.log("Toggling Sidebar", isSidebarOpen); // Debugging state change
     setIsSidebarOpen(!isSidebarOpen);
   };
 
@@ -146,12 +144,17 @@ const Navbar = () => {
             <NavLink to="#products" className="hover:text-gray-300">
               Products
             </NavLink>
-
-            <NavLink to={token ? "/dashboard" : "/login"}>
-              <button className="px-4 py-1.5 bg-white text-blue-900 rounded-full hover:bg-gray-200 transition-colors">
-                {token ? "Dashboard" : "Login"}
-              </button>
-            </NavLink>
+            {token ? (
+              <NavLink to="/dashboard">
+                <MdSpaceDashboard size={30} cursor="pointer" />
+              </NavLink>
+            ) : (
+              <NavLink to="/login">
+                <button className="px-4 py-1.5 bg-white text-blue-900 rounded-full hover:bg-gray-200 transition-colors">
+                  Login
+                </button>
+              </NavLink>
+            )}
           </div>
         </div>
       </nav>

@@ -29,7 +29,7 @@ const LoginForm = () => {
   return (
     <div className="flex h-screen justify-center items-center bg-gray-100">
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-sm">
-        <h2 className="text-2xl font-bold text-center mb-4">
+        <h2 className="text-2xl font-bold text-black text-center mb-4">
           Admin Login Panel
         </h2>
         <form onSubmit={handleSubmit}>

@@ -2,12 +2,14 @@ import React, { useState, useContext, useEffect } from "react";
 import { FaRegMoon } from "react-icons/fa"; 
 import { GlobalInfo } from "../App";
 import { LuSun } from "react-icons/lu";
+import { PiUserCheckBold } from "react-icons/pi";
 
 const ThemeToggle = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const savedTheme = localStorage.getItem("theme");
-
+    const{valueTheme,setThemeValue}=useContext(GlobalInfo)
     const setTheme = (theme) => {
+        setThemeValue(theme)
         localStorage.setItem("theme", theme);
         setMenuOpen(false); 
     };

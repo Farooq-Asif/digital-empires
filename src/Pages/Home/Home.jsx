@@ -2,13 +2,9 @@ import React from "react";
 import MainLayout from "../../Layout/MainLayout";
 import LeaderShipComponent from "../../Components/LeaderShipComponent";
 import img from "../../Assets/Images/demand_connecting_people-hero.jpg";
-import { motion } from "framer-motion";
 import { TeamInfo } from "../../Data/TeamInfo";
-import img1 from '../../Assets/Images/Blue Dark Professional Geometric Business Project Presentation .png'
-import ProductComponent from "../../Components/ProductComponent";
 import CounterComponent from "../../Components/CounterComponent";
 import HomeMainSection from "../../Components/HomeMainSection";
-import Slider from "../../Components/Slider";
 import HomeOurProjectSection from "../../Components/HomeOurProjectSection";
 import TeamCarousel from "../../Components/TeamCarasoul";
 const Home = () => {
