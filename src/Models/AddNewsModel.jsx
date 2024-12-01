@@ -8,7 +8,6 @@ const AddNewsModal = ({ showModal, onClose, setState }) => {
   const savedTheme = localStorage.getItem("theme");
   const [newsText, setNewsText] = useState("");
   const [publisher, setPublisher] = useState("");
-  const [newsDate, setNewsDate] = useState("");
   const [websiteLink, setWebsiteLink] = useState("https://");
   const Dispatch = useDispatch();
   const handleSubmit = (e) => {
@@ -16,12 +15,11 @@ const AddNewsModal = ({ showModal, onClose, setState }) => {
     const data = {
       publisher,
       newsText,
-      newsDate,
+      newsDate:Date.now(),
       websiteLink,
     };
     Dispatch(addRecentNews(data, token,setState));
     setNewsText("");
-    setNewsDate("");
     setWebsiteLink("");
     setPublisher("");
 
@@ -55,24 +53,6 @@ const AddNewsModal = ({ showModal, onClose, setState }) => {
                 </div>
                 <div className="mb-4">
                   <label
-                    htmlFor="newsDate"
-                    className="block text-sm font-medium mb-2"
-                  >
-                    News Date
-                  </label>
-                  <TextField
-                    type="date"
-                    id="newsDate"
-                    value={newsDate}
-                    onChange={(e) => setNewsDate(e.target.value)}
-                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="mb-4">
-                  <label
                     htmlFor="newsText"
                     className="block text-sm font-medium mb-2"
                   >
@@ -87,6 +67,25 @@ const AddNewsModal = ({ showModal, onClose, setState }) => {
                     required
                   />
                 </div>
+                {/* <div className="mb-4">
+                  <label
+                    htmlFor="newsDate"
+                    className="block text-sm font-medium mb-2"
+                  >
+                    News Date
+                  </label>
+                  <TextField
+                    type="date"
+                    id="newsDate"
+                    value={newsDate}
+                    onChange={(e) => setNewsDate(e.target.value)}
+                    className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+                    required
+                  />
+                </div> */}
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
                 <div className="mb-4">
                   <label
                     htmlFor="websiteLink"
