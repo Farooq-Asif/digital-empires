@@ -48,7 +48,7 @@ const TopBar = () => {
         </button>
         {isOpen && (
           <div className="absolute right-0 top-10 mt-2 w-[100px] bg-white shadow-lg rounded-md ">
-              <div className=" hover:bg-slate-600 hover:text-white py-2 px-2 flex items-center  cursor-pointer">
+              <div className="text-black hover:bg-slate-600 hover:text-white py-2 px-2 flex items-center  cursor-pointer">
               <Link to="/" className="flex items-center gap-2">
               <FaHome/>
                 <span className="text-danger text-center">Home</span>
