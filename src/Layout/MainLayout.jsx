@@ -11,9 +11,9 @@ const MainLayout = (WrapComponent) => {
 const location=useLocation()
 const pathName = location.pathname.split('/').filter(Boolean);
 
-    // useEffect(() => {
-    //     dispatch(getTraffic(pathName));
-    // }, [dispatch]);
+    useEffect(() => {
+        dispatch(getTraffic(pathName));
+    }, [dispatch]);
 
     return (
       <>
