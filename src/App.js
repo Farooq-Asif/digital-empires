@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import "react-loading-skeleton/dist/skeleton.css"; 
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-JF3WC3Z07E');
+ReactGA.initialize('G-LFM7D3LQ03');
 
 
 export const GlobalInfo =createContext()

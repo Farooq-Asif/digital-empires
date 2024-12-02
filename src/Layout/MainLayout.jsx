@@ -15,9 +15,10 @@ const pathName = location.pathname.split('/').filter(Boolean);
         dispatch(getTraffic(pathName));
         ReactGA.send({
           hitTyoe:'pageview',
-          page:window.location.pathname 
+          page:window.location.pathname +  window.location.search
         })
     }, [dispatch]);
+    
 
     return (
       <>
