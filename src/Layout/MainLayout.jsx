@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 import { useDispatch } from "react-redux";
 import { getTraffic } from "../store/traffic/actions/actionsCreators";
 import { useLocation } from "react-router";
-
+import ReactGA from 'react-ga';
 const MainLayout = (WrapComponent) => {
   const MainLayoutComponent = (props) => {
     const dispatch = useDispatch();
@@ -13,6 +13,10 @@ const pathName = location.pathname.split('/').filter(Boolean);
 
     useEffect(() => {
         dispatch(getTraffic(pathName));
+        ReactGA.send({
+          hitTyoe:'pageview',
+          page:window.location.pathname 
+        })
     }, [dispatch]);
 
     return (
