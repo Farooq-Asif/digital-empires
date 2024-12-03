@@ -9,14 +9,7 @@ export  const TeamInfo = [
       text2: 'Prior to founding Demand.io, Michael served as Head of Product Innovation at Yahoo, where he spearheaded the development of pioneering social platforms like Yahoo Live, one of the first live streaming social networks, and Yahoo Mixd, an early mobile-first social app. Many of the innovations and designs Michael led during his Yahoo tenure were granted patents by the USPTO. Previously, Michael held product leadership roles at venture-backed startup Desktop.com and at Pequot Ventures, as well as investment banking firm Jefferies. Michael’s unique blend of product development, entrepreneurial, and strategic advisory skills empowers him to lead Demand.io in its mission to revolutionize e-commerce through AI and community-driven principles.',
       text3: 'Michael frequently authors thought leadership articles on artificial intelligence, decentralized commerce, and the creator economy. Michael studied Computer Science and Business Administration at UC Berkeley, earning a Bachelor of Science degree from the Haas School of Business.'
     },
-    {
-      title: 'Hamid',
-      Subtitle: 'CEO',
-      img: Hamidimg,
-      text1: 'Michael Quoc is the founder and CEO of Demand.io. A seasoned technology executive and entrepreneur, Michael has spent his career at the forefront of innovation in e-commerce, social media, and artificial intelligence.',
-      text2: 'Prior to founding Demand.io, Michael served as Head of Product Innovation at Yahoo, where he spearheaded the development of pioneering social platforms like Yahoo Live, one of the first live streaming social networks, and Yahoo Mixd, an early mobile-first social app. Many of the innovations and designs Michael led during his Yahoo tenure were granted patents by the USPTO. Previously, Michael held product leadership roles at venture-backed startup Desktop.com and at Pequot Ventures, as well as investment banking firm Jefferies. Michael’s unique blend of product development, entrepreneurial, and strategic advisory skills empowers him to lead Demand.io in its mission to revolutionize e-commerce through AI and community-driven principles.',
-      text3: 'Michael frequently authors thought leadership articles on artificial intelligence, decentralized commerce, and the creator economy. Michael studied Computer Science and Business Administration at UC Berkeley, earning a Bachelor of Science degree from the Haas School of Business.'
-    },
+
     {
       title: 'Jason Toy',
       Subtitle: 'Head of AI Engineering',
