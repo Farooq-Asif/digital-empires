@@ -1,6 +1,5 @@
 import React from 'react';
 import DashboardLayout from '../Layout/DasboardLayout';
-import logo from '../Assets/Images/favicon.png'
 const Main = () => {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-900">
@@ -8,8 +7,8 @@ const Main = () => {
         animation: 'slideIn 2s ease-out forwards'
       }}>
         <div className='flex items-center'>
-            <img src={logo} width={50} alt="" />
-        igital Empires is launching soon
+            <span className="text-xl  font-extrabold">SKILLPRO LTD  is launching soon
+            </span>
         <h2></h2>
         </div>
       </h1>

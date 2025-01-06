@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import Main from "../Dashboard/Main";
 import RecentNews from "../Dashboard/RecentNews";
 import { useSelector } from "react-redux";
+import CeoDetails from "../Pages/CeoDetails/CeoDetails";
 const Routers = () => {
   const { token } = useSelector((state) => state.user);
 
@@ -15,6 +16,7 @@ const Routers = () => {
       <Route path="/" element={<Home />} />
       <Route path="/contactus" element={<Contact />} />
       <Route path="/press" element={<Press />} />
+      <Route path="/ceodetails" element={<CeoDetails/>} />
       <Route path="/login" element={<Login />} />
       {token ? (
         <>

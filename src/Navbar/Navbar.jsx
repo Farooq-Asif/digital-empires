@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import icon from "../Assets/Images/favicon.png";
 import { NavLink } from "react-router-dom";
 import ThemeToggle from "../Components/ThemeToggle";
 import { useSelector } from "react-redux";
@@ -26,7 +25,7 @@ const Navbar = () => {
         } md:hidden z-50`}
       >
         <div className="flex justify-between items-center p-4">
-          <img src={icon} alt="Logo" className="w-8 h-8" />
+          {/* <img src={icon} alt="Logo" className="w-8 h-8" /> */}
           {/* <span className="text-xl font-semibold z-0">Digital Empires</span> */}
         </div>
         <div className="space-y-4 p-4">
@@ -61,52 +60,25 @@ const Navbar = () => {
             Contact
           </NavLink>
           <NavLink
-            to="/products"
+            to="/ceodetails"
             className={`block py-2 px-4 ${
               theme === "dark"
                 ? "hover:bg-white text-black"
                 : "hover:bg-black text-white"
             }  `}
           >
-            Products
+            Ceo
           </NavLink>
-          <NavLink
-            to="https://bestcartoffer.com/"
-            className={`block py-2 px-4 ${
-              theme === "dark"
-                ? "hover:bg-white text-black"
-                : "hover:bg-black text-white"
-            }  `}
-          >
-            Best Cart Offer
-          </NavLink>
-          <NavLink
-            to="#product2"
-            className={`block py-2 px-4 ${
-              theme === "dark"
-                ? "hover:bg-white text-black"
-                : "hover:bg-black text-white"
-            }  `}
-          >
-            Product 2
-          </NavLink>
-          <NavLink
-            to="#product3"
-            className={`block py-2 px-4 ${
-              theme === "dark"
-                ? "hover:bg-white text-black"
-                : "hover:bg-black text-white"
-            }  `}
-          >
-            Product 3
-          </NavLink>
+          
+         
         </div>
       </div>
 
       <nav className="flex items-center justify-between p-4 header text-white fixed top-0 right-0 left-0 z-[1030] bg-[rgba(0,0,0,0.15)]">
         <div className="flex items-center ">
-          <img src={icon} alt="Logo" className="w-8 h-8 " />
-          <span className="text-xl font-semibold">igital Empires</span>
+    
+          <span className="text-xl  font-extrabold">S<span className="text-[hsl(358.36,95.63%,44.9%)]">KILLPRO</span> LTD
+          </span>
         </div>
         <div className="flex items-center space-x-6">
           <ThemeToggle />
@@ -141,8 +113,8 @@ const Navbar = () => {
             <NavLink to="/contactus" className="hover:text-gray-300">
               Contact
             </NavLink>
-            <NavLink to="#products" className="hover:text-gray-300">
-              Products
+            <NavLink to="/ceodetails" className="hover:text-gray-300">
+              Ceo
             </NavLink>
             {token ? (
               <NavLink to="/dashboard">

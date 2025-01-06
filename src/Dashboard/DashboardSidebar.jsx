@@ -3,24 +3,28 @@ import { NavLink } from "react-router-dom";
 import { Sidebar, Menu, SubMenu } from "react-pro-sidebar";
 import { MdDashboard } from "react-icons/md";
 import { IoNewspaperOutline } from "react-icons/io5";
-import logo from '../Assets/Images/favicon.png'
 import { GlobalInfo } from "../App";
 const DashboardSidebar = () => {
   const { isCollapsed } = useContext(GlobalInfo);
- 
- 
 
-  
   return (
     <>
       <Sidebar
         collapsed={isCollapsed}
         style={{ backgroundColor: "rgba(255, 255, 255, 1)", height: "100vh" }}
       >
-         <div className="flex  items-center p-4">
-          <img src={logo} alt="Logo" className="w-8 h-8" />
-          {!isCollapsed && 
-          <span className="text-xl font-semibold text-black z-0">igital Empires</span>}
+        <div
+          className={`flex  items-center p-4 ${
+            isCollapsed && "ps-7"
+          }`}
+        >
+          <span className={`text-2xl font-extrabold ${isCollapsed && 'text-[hsl(358.36,95.63%,44.9%)]'}  `}>S</span>
+          {!isCollapsed && (
+            <span className="text-xl  font-extrabold">
+              <span className="text-[hsl(358.36,95.63%,44.9%)]">KILLPRO</span>{" "}
+              LTD
+            </span>
+          )}
         </div>
         <Menu
           menuItemStyles={{
@@ -34,8 +38,16 @@ const DashboardSidebar = () => {
             },
           }}
         >
-          <SubMenu label={isCollapsed ? <MdDashboard size={25}/>:'Dashboard'} component={<NavLink to='/dashboard'/>} ></SubMenu>
-          <SubMenu label={isCollapsed ?<IoNewspaperOutline size={25}/>:'Recent News'} component={<NavLink to='/recentnews'/>} ></SubMenu>
+          <SubMenu
+            label={isCollapsed ? <MdDashboard size={25} /> : "Dashboard"}
+            component={<NavLink to="/dashboard" />}
+          ></SubMenu>
+          <SubMenu
+            label={
+              isCollapsed ? <IoNewspaperOutline size={25} /> : "Recent News"
+            }
+            component={<NavLink to="/recentnews" />}
+          ></SubMenu>
         </Menu>
 
         {/* {!path.includes(location.pathname) && (

@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react";
 import { motion } from "framer-motion";
 import ProductComponent from "./ProductComponent";
+import { Link } from "react-router-dom";
 const HomeMainSection = ({ onScroll }) => {
   const nextSectionRef = useRef(null);
   const savedTheme = localStorage.getItem("theme") || 'light'  ;
@@ -31,11 +32,12 @@ const HomeMainSection = ({ onScroll }) => {
         </motion.span>
       </motion.h1>
       <p className={`text-center xs:px-2`}>
-        Demand.io creates AI-driven social shopping experiences that help
+      SKILLPRO LTD creates AI-driven social shopping experiences that help
         millions of people shop smarter, save money, and connect with their
         passions.
       </p>
       <div className="flex justify-center xs:mt-[40px] lg:mt-[100px] xs:mb-5 sm:mb-5">
+        <Link to='https://www.linkedin.com/company/skillpro-ltd'>
         <button
           className={`flex items-center  font-medium px-4 py-2 rounded-lg shadow-md  transition ${
             savedTheme === "dark"
@@ -61,9 +63,10 @@ const HomeMainSection = ({ onScroll }) => {
             </svg>
           </span>
         </button>
+        </Link>
       </div>
-      <ProductComponent />
-      <div className="flex flex-col   items-center px-4">
+      {/* <ProductComponent /> */}
+      {/* <div className="flex flex-col   items-center px-4">
         <div className="flex flex-col items-center w-full max-w-4xl  xs:space-y-10 sm:space-y-10 lg:space-y-20">
           <h2 className="font-bold text-center text-lg sm:text-xl md:text-2xl lg:text-5xl leading-snug">
             Digital Empires is a tech accelerator built on top of an AI commerce data
@@ -84,7 +87,7 @@ const HomeMainSection = ({ onScroll }) => {
             deliver differentiated user value.
           </h2>
         </div>
-      </div>
+      </div> */}
 
       <div className="arrow-container text-center mt-[100px]">
         <button

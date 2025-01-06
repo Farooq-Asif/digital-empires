@@ -8,9 +8,9 @@ const Press = () => {
   return (
     <>
       <GetInTouchComponent
-        title="Digital Empires.press page."
+        title="SKILLPRO LTD.press page"
         myclass="bg-black text-white relative"
-        paragraph="Your one-stop shop for all the latest press releases from Demand.io, press kit assets and more."
+        paragraph="Your one-stop shop for all the latest press releases from SKILLPRO LTD , press kit assets and more."
       />
       {/* <div className="absolute left-[250px] bottom-[-150px] flex justify-center items-center  ">
         <img
@@ -21,9 +21,9 @@ const Press = () => {
         />
       </div> */}
       <div className="my-[100px]">
-      <PressRecentNewComponent/>
+        <PressRecentNewComponent />
       </div>
-      <CounterComponent title="About Digital Empires" />
+      <CounterComponent title="About SKILLPRO LTD " />
     </>
   );
 };

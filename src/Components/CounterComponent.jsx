@@ -24,19 +24,19 @@ const CounterComponent = ({title}) => {
           {/* Stat Item */}
           <div className="text-center">
             <h4 className="text-3xl font-bold ">
-              $<span className="counter" data-count="1"><CountUp start={0} end={1} duration={1.2}/></span>B
+              $<span className="counter" data-count="1"><CountUp start={0} end={10} duration={1.2}/></span>M
             </h4>
             <span>ecommerce volume annually.</span>
           </div>
           <div className="text-center">
             <h4 className="text-3xl font-bold">
-              <span className="counter" data-count="200"><CountUp start={0} end={200} duration={1.2}/></span>K+
+              <span className="counter" data-count="200"><CountUp start={0} end={50} duration={1.2}/></span>K
             </h4>
             <span className="">shopping decisions facilitated daily.</span>
           </div>
           <div className="text-center">
             <h4 className="text-3xl font-bold ">
-              <span className="counter" data-count="1.5"><CountUp start={0} end={1.5} duration={1.2}/></span>M+
+              <span className="counter" data-count="1.5"><CountUp start={0} end={50} duration={1.2}/></span>K
             </h4>
             <span >shopping answers verified.</span>
           </div>
@@ -48,7 +48,7 @@ const CounterComponent = ({title}) => {
           </div>
           <div className="text-center">
             <h4 className="text-3xl font-bold ">
-              <span className="counter" data-count="100"><CountUp start={0} end={100} duration={1.2}/></span>
+              <span className="counter" data-count="100"><CountUp start={0} end={30} duration={1.2}/></span>
             </h4>
             <span>staff globally.</span>
           </div>

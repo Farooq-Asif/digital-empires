@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import img from "../Assets/Images/star-badge.png";
+import img1 from "../Assets/Images/carasoul-1.jpeg";
+import img2 from "../Assets/Images/carasoul-2.jpeg";
+import img3 from "../Assets/Images/carasoul-3.jpeg";
+import img4 from "../Assets/Images/carasoul-4.jpeg";
+import img5 from "../Assets/Images/carasoul-5.jpeg";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; 
 
 const TeamCarousel = () => {
@@ -7,25 +11,32 @@ const TeamCarousel = () => {
 
   const teamMembers = [
     {
-      name: "Emma Lyn Soronio",
-      role: "Knoji Team Lead",
-      image: img,
+      name: "Muhammad Hamid Raza",
+      role: "Senior Manager",
+      image: img1,
     },
     {
-      name: "Rey Bangas",
-      role: "Content Operations Director",
-      image: img,
+      name: "Muhammad Awais",
+      role: "Affliate Marketing Specialist",
+      image: img2,
     },
     {
-      name: "Rachelle Sagun",
-      role: "Partner Management Team Lead",
-      image: img,
+      name: "Muhammad Asim",
+      role: "Team Leader",
+      image: img3,
+    },
+   
+    {
+      name: "Muhammad Kamran",
+      role: "Graphic Expert",
+      image: img4,
     },
     {
-      name: "Max Arias",
-      role: "Staff Frontend Engineer",
-      image: img,
+      name: "Rahat Ali",
+      role: "Data Entering Specialist",
+      image: img5,
     },
+   
   ];
 
   const handleScroll = (direction) => {
@@ -79,8 +90,9 @@ const TeamCarousel = () => {
                   src={member.image}
                   alt={member.name}
                   className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-white shadow-lg"
+
                 />
-                <h3 className="mt-4 text-lg font-semibold">{member.name}</h3>
+                <h3 className="mt-4 text-[0.8rem] ps-4 font-semibold">{member.name}</h3>
                 <p className="text-sm text-gray-500">{member.role}</p>
               </div>
             ))}
